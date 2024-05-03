@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #221a11;
+}
+
+@layer components {
+  .input {
+    @apply rounded-full border border-stone-200 
+              px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none
+              focus:ring focus:ring-yellow-400
+              md:px-6 md:py-3;
+  }
+
+  .progress-3 {
+    width: 120px;
+    height: 20px;
+    border-radius: 20px;
+    background:
+      repeating-linear-gradient(135deg, #7a4908 0 10px, rgb(234 179 8) 0 20px) 0/0%
+        no-repeat,
+      repeating-linear-gradient(135deg, #ddd 0 10px, #eee 0 20px) 0/100%;
+    animation: p3 0.5s infinite;
+  }
+  @keyframes p3 {
+    100% {
+      background-size: 100%;
+    }
+  }
+
+  @keyframes loading {
+    20% {
+      background-position:
+        0% 0%,
+        50% 50%,
+        100% 50%;
+    }
+    40% {
+      background-position:
+        0% 100%,
+        50% 0%,
+        100% 50%;
+    }
+    60% {
+      background-position:
+        0% 50%,
+        50% 100%,
+        100% 0%;
+    }
+    80% {
+      background-position:
+        0% 50%,
+        50% 50%,
+        100% 100%;
+    }
+  }
+}
