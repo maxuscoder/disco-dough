@@ -7,9 +7,11 @@ function Button({ children, disabled, to, type, onClick }) {
 
   //bg-yellow-400
   const styles = {
+    position:
+      "text-sm rounded-md border-2 border-yellow-400 bg-yellow-400 font-semibold uppercase tracking-wide text-stone-950 transition-colors duration-300 hover:bg-yellow-500 hover:border-yellow-500 focus:outline-none disabled:cursor-not-allowed py-1.5 md:px-6 md:py-2.5",
     primary:
       base +
-      "text-white text-[18px] px-3 py-2 md:px-6 md:py-4 hover:text-black disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-gray-400",
+      "text-white text-[17px] px-2 py-1 md:px-6 md:py-4 hover:text-black disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-gray-400",
     cartIcon: "text-2xl",
     round:
       "text-md border-[1px] text-orange-50 border-orange-50 px-2 rounded-md hover:bg-orange-50 hover:text-black transition-all duration-300",
@@ -47,6 +49,7 @@ Button.propTypes = {
   to: PropTypes.string,
   type: PropTypes.oneOf([
     "primary",
+    "position",
     "cartIcon",
     "round",
     "secondary",

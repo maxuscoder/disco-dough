@@ -8,6 +8,7 @@ import { clearCart, getCart, getTotalCartPrice } from "../ui/cartSlice";
 import store from "../store";
 import { formatCurrency } from "../utilities/helpers";
 import { fetchAddress } from "../user/userSlice";
+import CardLayout from "../ui/CardLayout";
 
 const isValidPhone = (str) =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
@@ -16,6 +17,8 @@ const isValidPhone = (str) =>
 
 function CreateOrder() {
   const [withPriority, setWithPriority] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState("cash");
+
   const {
     username,
     status: addressStatus,
@@ -38,9 +41,11 @@ function CreateOrder() {
 
   if (!cart.length) return <EmptyCart />;
 
+  console.log(paymentMethod.toLowerCase());
+
   return (
     <div className="grid place-items-center h-screen">
-      <div className="text-orange-50 w-2/5">
+      <div className="text-orange-50 w-1/2">
         <h2 className="mb-8 text-xl font-semibold">Finish your order below:</h2>
         <Form
           method="POST"
@@ -49,7 +54,7 @@ function CreateOrder() {
           <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
             <label className="sm:basis-40 text-[17px]">First Name</label>
             <input
-              className="grow rounded-lg px-2 py-3 bg-orange-50 text-black focus:outline-none"
+              className="grow rounded-md px-4 py-3 bg-orange-50 text-black focus:outline-none"
               type="text"
               name="customer"
               defaultValue={username}
@@ -61,7 +66,7 @@ function CreateOrder() {
             <label className="sm:basis-40 text-[17px]">Phone number</label>
             <div className="grow">
               <input
-                className="grow w-full rounded-lg px-2 py-3 bg-orange-50 text-black focus:outline-none"
+                className="grow w-full rounded-md px-4 py-3 bg-orange-50 text-black focus:outline-none"
                 type="tel"
                 name="phone"
                 required
@@ -78,7 +83,7 @@ function CreateOrder() {
             <label className="sm:basis-40 text-[17px]">Address</label>
             <div className="grow">
               <input
-                className="grow w-full rounded-lg px-2 text-sm py-3 bg-orange-50 text-black focus:outline-none"
+                className="grow w-full rounded-md px-4 py-3 text-sm bg-orange-50 text-black focus:outline-none"
                 type="text"
                 name="address"
                 disabled={isLoadingAddress}
@@ -96,7 +101,7 @@ function CreateOrder() {
               <span className="absolute right-[3px] z-50">
                 <Button
                   disabled={isLoadingAddress}
-                  type="secondary"
+                  type="position"
                   onClick={(e) => {
                     e.preventDefault();
                     dispatch(fetchAddress());
@@ -108,7 +113,7 @@ function CreateOrder() {
             )}
           </div>
 
-          <div className="mb-12 flex items-center gap-5">
+          <div className="mb-4 flex items-center gap-5">
             <label htmlFor="priority" className="font-medium">
               Choose a payment method:
             </label>
@@ -116,8 +121,8 @@ function CreateOrder() {
               className="bg-transparent border-2 p-2"
               name="payment"
               id="payment"
-              value={withPriority}
-              onChange={(e) => setWithPriority(e.target.checked)}
+              value={paymentMethod}
+              onChange={(e) => setPaymentMethod(e.target.value)}
             >
               <option className="text-black p-2 hover:bg-red-600">
                 Cash 💵
@@ -125,8 +130,9 @@ function CreateOrder() {
               <option className="text-black">Card 💳</option>
             </select>
           </div>
+          {paymentMethod.toLowerCase().includes("card") ? <CardLayout /> : null}
 
-          <div className="mb-12 flex items-center gap-5">
+          <div className="mb-4 flex items-center gap-5">
             <input
               className="h-6 w-6 accent-yellow-400 focus:outline-none"
               type="checkbox"

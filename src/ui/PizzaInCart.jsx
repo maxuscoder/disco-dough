@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { formatCurrency } from "../utilities/helpers";
 
 function PizzaItemCart({ pizza }) {
-  const { id, name, unitPrice, ingredients, imageUrl, quantity } = pizza;
+  const { name, unitPrice, ingredients, imageUrl, quantity } = pizza;
   return (
     <div className="p-5 flex gap-5">
       <img src={imageUrl} className="w-[70px]" alt="pizza"></img>

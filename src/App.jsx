@@ -9,7 +9,9 @@ import Contact from "./pages/Contact";
 import Orders from "./pages/Orders";
 import Locations from "./pages/Locations";
 import CartOpen from "./pages/CartOpen";
-import CreateOrder from "./pages/CreateOrder";
+import CreateOrder, { action as createOrderAction } from "./pages/CreateOrder";
+// import {action as updateOrderAction} from "./pages/"
+import Order, { loader as orderLoader } from "./ui/Order";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,13 @@ const router = createBrowserRouter([
       {
         path: "/order/new",
         element: <CreateOrder />,
+        action: createOrderAction,
+      },
+      {
+        path: "/order/:orderId",
+        element: <Order />,
+        loader: orderLoader,
+        errorElement: <Error />,
       },
     ],
   },

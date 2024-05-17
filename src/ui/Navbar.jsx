@@ -1,9 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import companyLogo from "../assets/companyLogo.png";
+import { useDispatch } from "react-redux";
+import { logout } from "../user/userSlice";
 
 function Navbar() {
-  function logout() {
-    console.log("logging out");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  function logoutUser() {
+    dispatch(logout());
+    navigate("/");
   }
 
   return (
@@ -34,7 +39,7 @@ function Navbar() {
             Locations
           </Link>
           <button
-            onClick={() => logout()}
+            onClick={() => logoutUser()}
             className="relative uppercase hover:text-orange-50 text-[19px] block after:block after:content-[''] after:absolute after:h-[3px] after:bg-orange-50 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center font-mono"
           >
             Logout
