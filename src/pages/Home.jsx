@@ -26,18 +26,22 @@ function Home() {
         muted
         ref={videoRef}
       />
-      <div className="absolute w-full h-full top-0 flex flex-row justify-center items-center gap-[300px] text-white">
-        <img src={companyLogo} className="w-[375px]"></img>
+      <div className="absolute w-full h-full top-0 flex flex-col justify-center items-center gap-[50px] text-white lg:flex-row lg:gap-[300px]">
+        <img
+          src={companyLogo}
+          className="w-[175px] md:w-[250px] lg:w-[375px]"
+        ></img>
 
-        <div className="space-y-10">
+        <div className="space-y-4 md:space-y-10">
           <div>
-            <h1 className="text-5xl w-[400px] text-[#fcecc7]">
-              <span className="text-yellow-500 text-[52px] font-semibold uppercase">
+            <h1 className="text-xl md:text-3xl w-[400px] text-[#fcecc7] lg:text-5xl">
+              <span className="text-yellow-500 text-[37px]  md:text-[45px] font-semibold uppercase lg:text-[52px]">
                 Disco Dough:
               </span>{" "}
+              <br></br>
               Where Every Bite&apos;s a Party!
             </h1>
-            <p className="text-lg mt-4">
+            <p className="text-sm sm:display-hidden md:text-md mt-4 lg:text-lg">
               Fresh out of the oven, delivered straight to you.
             </p>
           </div>

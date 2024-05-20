@@ -9,7 +9,6 @@ import {
 } from "../utilities/helpers";
 import OrderItem from "./OrderItem";
 import { useEffect } from "react";
-import UpdateOrder from "./UpdateOrder";
 
 function Order() {
   const order = useLoaderData();
@@ -54,10 +53,10 @@ function Order() {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-2 bg-[#c27e31] rounded-md px-6 py-5">
-        <p className="font-medium">
+      <div className="flex flex-wrap items-center justify-between gap-2 bg-yellow-500 rounded-md px-6 py-5">
+        <p className=" text-orange-950 font-bold">
           {deliveryIn >= 0
-            ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left 😃`
+            ? `${calcMinutesLeft(estimatedDelivery)} minutes left..`
             : "Order should have arrived"}
         </p>
         <p className="text-sm text-black">
@@ -79,7 +78,7 @@ function Order() {
         ))}
       </ul>
 
-      <div className="space-y-2 bg-[#c27e31] rounded-md px-6 py-5">
+      <div className="space-y-2 bg-yellow-500 rounded-md px-6 py-5">
         <p className="text-sm font-medium text-black">
           Price pizza: {formatCurrency(orderPrice)}
         </p>
@@ -88,11 +87,10 @@ function Order() {
             Price priority: {formatCurrency(priorityPrice)}
           </p>
         )}
-        <p className="font-bold">
+        <p className="font-bold text-orange-950">
           To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
         </p>
       </div>
-      {!priority && <UpdateOrder order={order} />}
     </div>
   );
 }

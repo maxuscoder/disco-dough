@@ -34,7 +34,7 @@ function CreateUser() {
           </Button>
         ) : (
           <Button type="primary" disabled={true}>
-            Username Required
+            Username required
           </Button>
         )}
       </div>

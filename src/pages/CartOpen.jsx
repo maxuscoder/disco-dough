@@ -23,21 +23,21 @@ function Cart() {
   if (cart.length === 0) return <EmptyCart />;
 
   return (
-    <div className="px-[70px] py-3 mt-6 text-orange-50">
+    <div className="px-[30px] md:px-[70px] py-3 mt-6 text-orange-50">
       <Link to="/menu">&larr; Continue Shopping</Link>
 
-      <h2 className="mt-[50px] text-xl font-semibold">
+      <h2 className="mt-[12px] sm:mt-[50px] text-md sm:text-xl font-semibold">
         Your shopping cart, {username}
       </h2>
       <p>You have {totalQuantity} items in your cart</p>
 
-      <div className="flex mt-10 gap-5 justify-center items-center">
-        <ul className="divide-y divide-stone-200/30 border-b border-stone-200/30 w-3/4">
+      <div className="flex flex-col sm:mt-10 gap-5 justify-center items-center md:flex-row">
+        <ul className="divide-y divide-stone-200/30 border-b border-stone-200/30 w-full md:w-3/4">
           {cart.map((pizza) => (
             <PizzaItemCart pizza={pizza} key={pizza.pizzaId}></PizzaItemCart>
           ))}
         </ul>
-        <div className="flex flex-col items-center justify-center w-1/4 gap-10 flex-1">
+        <div className="flex flex-col items-center justify-center w-1/4 gap-4 md:gap-10 flex-1">
           <Button type="cart" to="/order/new">
             Order pizzas
           </Button>

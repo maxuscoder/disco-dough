@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 function UpdateItemQuantity({ pizzaId, currentQuantity }) {
   const dispatch = useDispatch();
   return (
-    <div className="flex items-center gap-4 md:gap-3">
+    <div className="flex items-center gap-2 md:gap-3">
       <Button
         type="round"
         onClick={() => dispatch(decreaseItemQuantity(pizzaId))}

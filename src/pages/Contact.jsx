@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Contact() {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-[#221a11] p-4">
-      <h1 className="text-4xl font-bold text-orange-400 mb-4">Contact Us</h1>
+      <h1 className="text-4xl font-bold text-yellow-400 mb-4">Contact Us</h1>
       <p className="text-lg text-orange-100 mb-8">
         We&apos;d love to hear from you! Please fill out the form below.
       </p>
@@ -21,7 +21,7 @@ function Contact() {
           <input
             type="text"
             id="name"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500"
             placeholder="Your Name"
           />
         </div>
@@ -35,7 +35,7 @@ function Contact() {
           <input
             type="email"
             id="email"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500"
             placeholder="Your Email"
           />
         </div>
@@ -48,14 +48,14 @@ function Contact() {
           </label>
           <textarea
             id="message"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500"
             rows="5"
             placeholder="Your Message"
           ></textarea>
         </div>
         <button
           type="submit"
-          className="w-full p-3 text-lg text-white bg-orange-500 rounded-lg hover:bg-orange-600"
+          className="w-full p-3 text-lg text-white bg-yellow-500 rounded-lg hover:bg-yellow-600"
         >
           Send Message
         </button>

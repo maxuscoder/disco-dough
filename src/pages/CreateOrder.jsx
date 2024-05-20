@@ -45,11 +45,13 @@ function CreateOrder() {
 
   return (
     <div className="grid place-items-center h-screen">
-      <div className="text-orange-50 w-1/2">
-        <h2 className="mb-8 text-xl font-semibold">Finish your order below:</h2>
+      <div className="text-orange-50 md:w-2/3 lg:w-1/2">
+        <h2 className="md:mb-8 text-xl font-semibold">
+          Finish your order below:
+        </h2>
         <Form
           method="POST"
-          className="border-2 border-yellow-400/5 rounded-lg p-20 bg-[#372a1c]"
+          className="border-none sm:rounded-md p-[60px] bg-[#372a1c]"
         >
           <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
             <label className="sm:basis-40 text-[17px]">First Name</label>
@@ -98,7 +100,7 @@ function CreateOrder() {
             </div>
 
             {!position.latitude && !position.longitude && (
-              <span className="absolute right-[3px] z-50">
+              <span className="md:absolute md:right-[3px] z-50">
                 <Button
                   disabled={isLoadingAddress}
                   type="position"
@@ -113,7 +115,7 @@ function CreateOrder() {
             )}
           </div>
 
-          <div className="mb-4 flex items-center gap-5">
+          <div className="mb-4 flex flex-col items-center gap-5 sm:flex-row">
             <label htmlFor="priority" className="font-medium">
               Choose a payment method:
             </label>
@@ -134,7 +136,7 @@ function CreateOrder() {
 
           <div className="mb-4 flex items-center gap-5">
             <input
-              className="h-6 w-6 accent-yellow-400 focus:outline-none"
+              className="h-6 w-6 accent-yellow-500 focus:outline-none"
               type="checkbox"
               name="priority"
               id="priority"

@@ -32,26 +32,29 @@ function PizzaCard({ pizza }) {
   const isInCart = currentQuanity > 0;
 
   return (
-    <div className="flex gap-5 py-7 hover:scale-[1.01] transition-transform duration-200">
+    <div className="flex justify-center items-center gap-2 sm:gap-5 py-2 sm:py-4 md:py-7 hover:scale-[1.01] transition-transform duration-200">
       <img
         src={imageUrl}
         alt={`pizza_${id}`}
-        className={`h-[150px] ${soldOut ? "opacity-70 grayscale" : ""}`}
+        className={`h-[75px] sm:h-[100px] md:h-[150px] ${soldOut ? "opacity-70 grayscale" : ""}`}
       ></img>
-      <div className="pt-2 flex flex-col grow">
+      <div className="pt-2 flex flex-col grow gap-0 sm:gap-4">
         <h3
-          className={`${soldOut ? "text-gray-100/40" : ""} text-[19px] font-semibold`}
+          className={`${soldOut ? "text-gray-100/40" : ""} text-[17px] md:text-[19px] font-semibold`}
         >
-          <span className={soldOut ? "grayscale" : ""}>🍕</span> Pizza {name}
+          <span className={`${soldOut ? "grayscale" : ""}`}>🍕</span> Pizza{" "}
+          {name}
         </h3>
-        <p className={`${soldOut ? "text-gray-100/40" : ""} italic`}>
+        <p
+          className={`${soldOut ? "text-gray-100/40" : ""} text-sm italic md:text-md`}
+        >
           <span className={`${soldOut ? "grayscale" : ""} not-italic`}>📃</span>{" "}
           {ingredients.join(", ")}
         </p>
 
-        <div className="mt-auto flex items-center justify-between">
+        <div className="mt-auto flex flex-col items-start sm:flex-row sm:items-center justify-between">
           {!soldOut ? (
-            <p className="text-md">{formatCurrency(unitPrice)}</p>
+            <p className="text-sm sm:text-md">{formatCurrency(unitPrice)}</p>
           ) : (
             <p className="text-md font-medium uppercase text-stone-500">
               Sold out

@@ -12,9 +12,9 @@ function Button({ children, disabled, to, type, onClick }) {
     primary:
       base +
       "text-white text-[17px] px-2 py-1 md:px-6 md:py-4 hover:text-black disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-gray-400",
-    cartIcon: "text-2xl",
+    cartIcon: "text-xl sm:text-2xl",
     round:
-      "text-md border-[1px] text-orange-50 border-orange-50 px-2 rounded-md hover:bg-orange-50 hover:text-black transition-all duration-300",
+      "text-sm md:text-md border-[1px] text-orange-50 border-orange-50 px-[6px] sm:px-2 sm:py-[2px] rounded-md hover:bg-orange-50 hover:text-black transition-all duration-300",
     secondary:
       "inline-block text-sm rounded-full border-2 border-yellow-400 bg-yellow-400 font-semibold uppercase tracking-wide text-stone-950 transition-colors duration-300 hover:bg-yellow-500 hover:border-yellow-500 focus:outline-none disabled:cursor-not-allowed py-1.5 md:px-6 md:py-2.5",
     cart: "w-[200px] rounded-md border-yellow-500 border-2 tracking-wide transition-colors duration-300 hover:bg-yellow-500 hover:text-black focus:bg-yellow-400 focus:border-yellow-400 focus:outline-none focus:ring-transparent focus:ring-0 text-center py-2",

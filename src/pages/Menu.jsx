@@ -10,9 +10,9 @@ function Menu() {
   return (
     <div className="grid h-screen grid-rows-[auto_1fr_auto]">
       <Navbar />
-      <div className="bg-[#221a11] text-orange-100 pt-[55px]">
-        <main className="mx-auto max-w-3xl">
-          <div className="divide-y divide-stone-600">
+      <div className="bg-[#221a11] text-orange-100 pt-4 sm:pt-[55px]">
+        <main className="mx-auto max-w-lg md:max-w-3xl">
+          <div className="divide-y divide-stone-600 pl-2">
             {menu.map((pizza) => (
               <PizzaCard pizza={pizza} key={pizza.id} />
             ))}
@@ -26,7 +26,6 @@ function Menu() {
 
 export async function loader() {
   const menu = await getMenu();
-  // console.log(menu);
   return menu;
 }
 export default Menu;

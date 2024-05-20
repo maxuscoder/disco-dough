@@ -4,13 +4,15 @@ import { formatCurrency } from "../utilities/helpers";
 function PizzaItemCart({ pizza }) {
   const { name, unitPrice, ingredients, imageUrl, quantity } = pizza;
   return (
-    <div className="p-5 flex gap-5">
-      <img src={imageUrl} className="w-[70px]" alt="pizza"></img>
-      <p className="flex justify-between items-center w-full">
+    <div className="p-5 flex gap-5 justify-center items-center">
+      <img src={imageUrl} className="w-[75px] h-[75px]" alt="pizza"></img>
+      <p className="flex flex-col justify-between items-start md:items-center w-full md:flex-row">
         <span>
-          <span className="text-lg font-semibold">Pizza {name}</span>
+          <span className="text-md sm:text-lg font-semibold">Pizza {name}</span>
           <br></br>
-          <span className="text-orange-50/50">{ingredients.join(", ")}</span>
+          <span className="text-orange-50/60 text-[13px]">
+            {ingredients.join(", ")}
+          </span>
         </span>
         <span className="flex-1"></span>
         <span>

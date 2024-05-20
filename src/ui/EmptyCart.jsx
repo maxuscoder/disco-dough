@@ -5,9 +5,7 @@ function EmptyCart() {
     <div className="px-3 py-3 text-orange-50">
       <Link to="/menu">&larr; See Menu</Link>
 
-      <p className="mt-7 font-semibold">
-        Your cart is still empty. Start adding some pizzas :)
-      </p>
+      <p className="mt-7 font-semibold">Your cart is empty.</p>
     </div>
   );
 }
