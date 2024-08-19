@@ -18,7 +18,7 @@ function CreateUser() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="w-full">
       <input
         className="text-white px-3 py-2 text-lg bg-transparent border-[2px] border-transparent focus:border-[#8c8c8c7c] rounded-md focus:border-[2px] focus:outline-none focus:ring-0"
         type="text"

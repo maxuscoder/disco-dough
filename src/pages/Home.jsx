@@ -26,15 +26,15 @@ function Home() {
         muted
         ref={videoRef}
       />
-      <div className="absolute w-full h-full top-0 flex flex-col justify-center items-center gap-[50px] text-white lg:flex-row lg:gap-[300px]">
+      <div className="absolute w-full h-full top-0 flex flex-col justify-center items-center gap-[20px] text-white lg:flex-row lg:gap-[300px]">
         <img
           src={companyLogo}
           className="w-[175px] md:w-[250px] lg:w-[375px]"
         ></img>
 
-        <div className="space-y-4 md:space-y-10">
+        <div className="text-center space-y-2 md:space-y-10">
           <div>
-            <h1 className="text-xl md:text-3xl w-[400px] text-[#fcecc7] lg:text-5xl">
+            <h1 className="text-xl md:text-3xl text-[#fcecc7] lg:text-5xl">
               <span className="text-yellow-500 text-[37px]  md:text-[45px] font-semibold uppercase lg:text-[52px]">
                 Disco Dough:
               </span>{" "}
@@ -45,13 +45,15 @@ function Home() {
               Fresh out of the oven, delivered straight to you.
             </p>
           </div>
-          <div className="flex gap-10">
+          <div className="flex gap-10 m-auto">
             {username === "" ? (
               <CreateUser />
             ) : (
-              <Button to="/menu" type="primary">
-                Continue ordering, {username}
-              </Button>
+              <div className="w-full">
+                <Button to="/menu" type="primary">
+                  Continue ordering, {username}
+                </Button>
+              </div>
             )}
           </div>
         </div>
