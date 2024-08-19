@@ -34,7 +34,7 @@ function Order() {
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
-    <div className="space-y-8 px-4 py-6 m-auto h-screen flex flex-col justify-center text-white w-5/6">
+    <div className="space-y-8 px-4 py-6 m-auto flex flex-col justify-center text-white w-5/6">
       <Link className="text-white text-lg" to="/menu" type="primary">
         ⬅ Back to menu
       </Link>

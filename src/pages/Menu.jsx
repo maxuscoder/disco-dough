@@ -8,9 +8,9 @@ function Menu() {
   const menu = useLoaderData();
   // console.log(menu);
   return (
-    <div className="grid h-screen grid-rows-[auto_1fr_auto]">
+    <div className="grid grid-rows-[auto_1fr_auto]">
       <Navbar />
-      <div className="bg-[#221a11] text-orange-100 pt-4 sm:pt-[55px]">
+      <div className="bg-[#221a11] mb-[80px] text-orange-100 pt-4 sm:pt-[55px]">
         <main className="mx-auto max-w-lg md:max-w-3xl">
           <div className="divide-y divide-stone-600 pl-2">
             {menu.map((pizza) => (
